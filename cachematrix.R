@@ -3,12 +3,6 @@
 #function takes an input vector as a matrix
 makeCacheMatrix <- function(x = matrix()) {
   
-  m <- NULL
-  set <- function(y) {
-    x <<- y
-    m <<- NULL
-  }
-
   get <- function() x
   
   #use the solve function to get the inverse of the matrix
@@ -18,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
   #get the cached result m
   getsolve <- function() m
   
-  list(set = set, get = get,
+  list(get = get,
        setsolve = setsolve,
        getsolve = getsolve)
 }
